@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        style(type='text/css').
+            body {
+                margin: 0;
+            }
+
+            .header {
+                background-color: #aec57d;
+                padding: 1.5rem 4em;
+            }
+
+            .content {
+                padding: 0 3rem;
+            }
+
+            .footer {
+                background-color: #ececec;
+                padding-top: 0.5rem;
+                padding-bottom: 1.5rem;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .link,
+            .link > a {
+                font-weight: bold;
+                color: #aec57d;
+            }
+    body
+        .header
+            img(alt='Doxa-logo', src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAdCAMAAADy6eDaAAAAAXNSR0IArs4c6QAAAl5QTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////M7q5XgAAAMl0Uk5TAAECAwQFBgcICQoLDA0PEBESFBUWFxgZGhscHR4fICIjJCUmJygqKywtLjAzNTY3ODk8PT4/RUZHSktMTU5RUlNUVVZXWFlaXF9hZGVmZ2hpamtscHFydHZ3eHl6e31+f4CBgoOEhYaHiImLjY+RkpOUlZaZmpucnZ6goaKkqKmqq6ytrq+xsrO1tre4ubq8vb7AwcLDxMXHyMnLzM3Oz9DS09bX2Nna29zd3uDh4uPk5ebn6Orr7e7v8PHy8/T19vf4+fr7/P3+u9i8YwAAA8hJREFUSMftlelfTVsYx9fZ56QcjkiIBqKu2GbKdOOap4sMIcpcxkyZL64hUyJTueXgqkgiJMmpTsWZfv+VtfZaa++zd1544531Yp9nP7/n891rrfMMhPRYO/3+PuQXrd3Ab/Zv9o/X8HkFl4q2qD3ZERn5p4tP7piqiPdoVR1pqEmqOlB/sSXP33vpWE4as+NUVXinN4Kv/zPM7F45rUL5uNqueVz18E+ScnIHWobIl9lNIvRJOiEHARtzOo8xT1tNB32GCpUwdlItUwKNIfZTyXc43ofXLi47qoA/RajrFIvx1HjpM7jXJtgxL4FPuxLomUYupuaRfJ2dSnfi3TLZSVzT9viAujjNmwP8w/UC4KhAD2mgR9s2lBAlZSk19wv2v8C9WBHiPBLCG8lWKoEqebnjXgBXubsMWMSM9CCqo4R8HSgdIOy+J8AglD0fuGM3/p1sdjTOzgJuO3TB+QzI1Ky4FngSCenfiO40IS4DrikGJJdBFBLTgubYsIRRKiR7sAftCWGK6sdb/tFMoNxOLgLr5I18QeOAsFC7W2MvBDaZsjHFJ9gbgSxr4i/g1lFg63LghlSWG5/ha2yAsffhW4w51d2CfQ4hl0kYBeRzK6oafi+a9NQ+hM5+ZkgNY5ei2lJGZwT7GerNguLFNWGmddN0zdCVh6iyQC4wdjOuW9zZnO34iisW5T80SPMy4DaENlywhOYy9iuUWNyrOFvpxHmLcg91wprBqmmNLnzA5Z4bVOgGai3uAnEnlaiwKA24yI3YZnjeo3usFG7iqSW0kLG3IpBgdt8R7OPo6GsShgWRx5tSCbB4WgC1sjfsgW+QGVLB2Jn6ny97SEiwaemsNCnbgVmasR44R8gO4IxQaCLnmkJTtfyOrEHbiHD3eVk70U14Ex2+7c+ojtCK6BvqaXbaHwJLRM3W47Pp9Fc0NpkYhNtpeLOMmp8LFBvdILIcwYkaqBZ+zYhvRbvYVnoIj6IMyAZe84QcAJ4nC6fjQAjv9D5YDJTJ+kh6DBRqFu1E/NrJHOBxL27SNu1OlE3/MBiEsXvfop20SI0gtqEb6ujtGz12EG2EXw5N6E9ippzsBEo091/AfdmWioCDovfdBdoPj3EQW/wm2mPz5GwgazrZBHjfRZ/eteFzx7EzwE7nY48u3jHoRbTGy7PT2g/NFAMt+ysN8r/rZmNmhT53aH8q7dCmUfvZRMu8nFzu1RTP7T943T8A5hkXO7oLn+KkXSZCTw0jYWz62VGL8v6e0fsHU1pJWbh57nDbzwx0JXVJ3oqMSPn6HS/w5yCc5xBQAAAAAElFTkSuQmCC')
+        .content
+            h3 Dear #{name},
+            p #{title}
+            p !{message}
+            | Thank You.
+            br
+            br
+            | Best Regards,
+            br
+            | Doxa Team.
+            br
+        .footer
+            .link
+                a(href='#') Privacy Policy&nbsp;|&nbsp;
+                a(href='#') Terms and Conditions&nbsp;|&nbsp
+                a(href='#') Contact us
+            br
+            span Copyright &copy; 2021 Doxa Holdings

@@ -1,0 +1,108 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: email-deployment
+  name: email-deployment
+spec:
+  replicas: {replicas}
+  selector:
+    matchLabels:
+      app: email-deployment
+  template:
+    metadata:
+      labels:
+        app: email-deployment
+    spec:
+      containers:
+        - image: {container_image}
+          name: email-service
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          volumeMounts:
+            - name:  aws-credentials
+              mountPath:  "/app/aws"
+              readOnly: true
+          env:      
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: ENV
+            - name: MS_TEAMS_WEBHOOK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: MS_TEAMS_WEBHOOK_URL
+            - name: MONGODB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: MONGODB_HOST
+            - name: MONGODB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: MONGODB_USER
+            - name: AUTH_SOURCE
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: AUTH_SOURCE
+            - name: MONGODB_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: connex-secrets
+                  key: MONGODB_PWD
+            - name: MONGODB_OPTIONS
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: MONGODB_OPTIONS
+            # Mongodb port
+            - name: MONGODB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: MONGODB_PORT
+            # Rabbit mq config
+            - name: RABBIT_MQ_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: RABBIT_HOSTNAME
+            # rabbitMQ PORT
+            - name: RABBIT_MQ_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: RABBIT_PORT
+            # rabbitMQ user
+            - name: RABBIT_MQ_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: RABBITMQ_USERNAME
+            # rabbitMQ password
+            - name: RABBIT_MQ_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: connex-secrets
+                  key: RABBIT_MQ_PWD
+            # Virtual host
+            - name: VHOST
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: VHOST
+            # Email address used to send notification
+            - name: EMAIL_FROM
+              valueFrom:
+                configMapKeyRef:
+                  name: connex-conf
+                  key: EMAIL_FROM
+      volumes:
+        - name:  aws-credentials
+          secret:
+            secretName: aws-credentials

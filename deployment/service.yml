@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: doxa-email-service
+spec:
+  selector:
+    app: email-deployment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

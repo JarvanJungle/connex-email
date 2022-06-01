@@ -1,0 +1,25 @@
+extend layout
+
+block content
+    .container
+    .my-5(role='article' aria-label='An email from Your Brand Name' lang='en' style="background-color:lightseagreen; color: #2b2b2b; font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-weight: 400; line-height: 28px; margin: 0 auto; max-width: 720px; padding: 40px 20px 40px 20px;")
+        header
+        a(href='#')
+            img.center(src='https://switch.fullstacksys.com/uploads/SWITCH%20SPEX%20Logos/Doxa%20Logo.png' alt='' height='80' width='80')
+            //- img(src='/doxa.png' alt='' height='80' width='80')
+        h1(style='color: #000000; font-size: 32px; font-weight: 800; line-height: 32px; margin: 48px 0; text-align: center;')= title
+        main
+        div(style='background-color: ghostwhite; border-radius: 4px; padding: 24px 48px;')
+            p
+            | !{message}
+            
+            //- p
+            //- a(href='http://localhost:4100/login' style='color: #B200FD; text-decoration: underline;') Login now
+
+            p
+            | If you think this email was sent in error, please contact our team by phone at +65 6970 9920 or
+            | reply to this email directly. Thank you!
+        footer
+        p(style='font-size: 16px; font-weight: 400; line-height: 24px; margin-top: 48px;')
+            | You received this email because you care about creating more accessible experiences for people. (Some Quotes)
+
